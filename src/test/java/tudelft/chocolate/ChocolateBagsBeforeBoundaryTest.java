@@ -18,14 +18,28 @@ public class ChocolateBagsBeforeBoundaryTest {
     }
 
     @Test
+    public void onlySmallBars() {
+        int result = new ChocolateBags().calculate(4, 2, 3);
+        Assertions.assertEquals(3, result);
+    }
+
+    @Test
     public void bigAndSmallBars() {
         int result = new ChocolateBags().calculate(5, 3, 17);
         Assertions.assertEquals(2, result);
     }
 
+
     @Test
-    public void onlySmallBars() {
-        int result = new ChocolateBags().calculate(4, 2, 3);
-        Assertions.assertEquals(3, result);
+    public void equalBars() {
+        ChocolateBags bags = new ChocolateBags();
+        int result = bags.calculate(5,5,25);
+        Assertions.assertEquals("0", result);
+    }
+
+    @Test
+    public void dontEqualsBars() {
+        int result = new ChocolateBags().calculate(15,18,18);
+        Assertions.assertEquals(3,result);
     }
 }

@@ -12,6 +12,13 @@ public class LeapYearTest {
     }
 
     @Test
+    public void leapYear() {
+        LeapYear ly = new LeapYear();
+        boolean result = ly.isLeapYear(2020);
+        Assertions.assertTrue(result);
+    }
+
+    @Test
     public void leapCenturialYears() {
         LeapYear ly = new LeapYear();
         Assertions.assertTrue(ly.isLeapYear(2000));
